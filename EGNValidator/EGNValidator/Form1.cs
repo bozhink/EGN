@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using System.Text.RegularExpressions;
 using System.IO;
+using System.Text;
+using System.Text.RegularExpressions;
+using System.Windows.Forms;
 
 namespace EGNValidator
 {
@@ -38,18 +32,22 @@ namespace EGNValidator
                         case -2:
                             sb.Append("невалидно ЕГН");
                             break;
+
                         case -1:
                             sb.Append("невалиден брой символи в ЕГН-то");
                             break;
+
                         case 0:
                             sb.Append("валидно ЕГН");
                             break;
+
                         default:
                             sb.Append("невалиден символ на позиция " + (code + 1));
                             break;
                     }
                     sb.Append("\r\n");
                 }
+
                 textBox1.Text = sb.ToString();
                 parsed = true;
             }

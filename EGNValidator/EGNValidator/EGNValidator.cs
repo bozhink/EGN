@@ -1,8 +1,4 @@
-﻿using System;
-using System.Linq;
-using System.Text;
-
-namespace EGNValidator
+﻿namespace EGNValidator
 {
     public static class EGNValidator
     {
@@ -39,7 +35,8 @@ namespace EGNValidator
                         d[i] = 0;
                     }
                 }
-                int checksum = (2*d[0] + 4*d[1] + 8*d[2] + 5*d[3] + 10*d[4] + 9*d[5] + 7*d[6] + 3*d[7] + 6*d[8]) % 11;
+
+                int checksum = (2 * d[0] + 4 * d[1] + 8 * d[2] + 5 * d[3] + 10 * d[4] + 9 * d[5] + 7 * d[6] + 3 * d[7] + 6 * d[8]) % 11;
                 checksum = checksum == 10 ? 0 : checksum;
                 if (checksum == d[9])
                 {
@@ -50,6 +47,7 @@ namespace EGNValidator
                     validationCode = -2;
                 }
             }
+
             return validationCode;
         }
     }
