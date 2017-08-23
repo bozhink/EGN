@@ -66,7 +66,7 @@
             this.button1.TabIndex = 1;
             this.button1.Text = "Валидирай";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.Button1_Click);
             // 
             // menuStrip1
             // 
@@ -95,7 +95,7 @@
             this.openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
             this.openToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
             this.openToolStripMenuItem.Text = "Отвори";
-            this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
+            this.openToolStripMenuItem.Click += new System.EventHandler(this.OpenToolStripMenuItem_Click);
             // 
             // saveAsToolStripMenuItem
             // 
@@ -103,7 +103,7 @@
             this.saveAsToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
             this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
             this.saveAsToolStripMenuItem.Text = "Запиши като";
-            this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
+            this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.SaveAsToolStripMenuItem_Click);
             // 
             // сприПрограматаToolStripMenuItem
             // 
@@ -111,7 +111,7 @@
             this.сприПрограматаToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
             this.сприПрограматаToolStripMenuItem.Size = new System.Drawing.Size(214, 22);
             this.сприПрограматаToolStripMenuItem.Text = "Спри програмата";
-            this.сприПрограматаToolStripMenuItem.Click += new System.EventHandler(this.сприПрограматаToolStripMenuItem_Click);
+            this.сприПрограматаToolStripMenuItem.Click += new System.EventHandler(this.ExitToolStripMenuItem_Click);
             // 
             // валидацияToolStripMenuItem
             // 
@@ -127,7 +127,7 @@
             this.валидирайToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F5;
             this.валидирайToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.валидирайToolStripMenuItem.Text = "Валидирай";
-            this.валидирайToolStripMenuItem.Click += new System.EventHandler(this.button1_Click);
+            this.валидирайToolStripMenuItem.Click += new System.EventHandler(this.Button1_Click);
             // 
             // openFileDialog1
             // 

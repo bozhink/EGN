@@ -12,15 +12,15 @@ namespace EGNValidator
 
         public EGNValidatorForm()
         {
-            InitializeComponent();
-            parsed = false;
+            this.InitializeComponent();
+            this.parsed = false;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Button1_Click(object sender, EventArgs e)
         {
-            if (!parsed)
+            if (!this.parsed)
             {
-                string inputText = textBox1.Text;
+                string inputText = this.textBox1.Text;
                 StringBuilder sb = new StringBuilder();
                 for (Match m = Regex.Match(inputText, @"\w+"); m.Success; m = m.NextMatch())
                 {
@@ -45,33 +45,33 @@ namespace EGNValidator
                             sb.Append("невалиден символ на позиция " + (code + 1));
                             break;
                     }
-                    sb.Append("\r\n");
+
+                    sb.AppendLine();
                 }
 
-                textBox1.Text = sb.ToString();
-                parsed = true;
+                this.textBox1.Text = sb.ToString();
+                this.parsed = true;
             }
         }
 
-        private void сприПрограматаToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ExitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Close();
+            this.Close();
         }
 
         private void OpenFile()
         {
-            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            if (this.openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 StreamReader reader = null;
                 string line = string.Empty;
                 StringBuilder result = new StringBuilder();
                 try
                 {
-                    reader = new StreamReader(openFileDialog1.FileName);
+                    reader = new StreamReader(this.openFileDialog1.FileName);
                     while ((line = reader.ReadLine()) != null)
                     {
-                        result.Append(line);
-                        result.Append("\r\n");
+                        result.AppendLine(line);
                     }
                 }
                 catch (Exception)
@@ -85,15 +85,16 @@ namespace EGNValidator
                         reader.Close();
                     }
                 }
-                textBox1.Text = result.ToString();
-                parsed = false;
+
+                this.textBox1.Text = result.ToString();
+                this.parsed = false;
             }
         }
 
-        private void openToolStripMenuItem_Click(object sender, EventArgs e)
+        private void OpenToolStripMenuItem_Click(object sender, EventArgs e)
         {
             bool openFile = true;
-            if (textBox1.Text.Length != 0)
+            if (this.textBox1.Text.Length != 0)
             {
                 if (MessageBox.Show("Текстовото поле не е празно. Сигурни ли сте, че искате да презапишете съдържанието?",
                     "Презаписване", MessageBoxButtons.YesNo) != DialogResult.Yes)
@@ -103,19 +104,19 @@ namespace EGNValidator
             }
             if (openFile)
             {
-                OpenFile();
+                this.OpenFile();
             }
         }
 
-        private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
+        private void SaveAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            saveFileDialog1.CheckFileExists = true;
-            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            this.saveFileDialog1.CheckFileExists = true;
+            if (this.saveFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 StreamWriter writer = null;
                 try
                 {
-                    writer = new StreamWriter(saveFileDialog1.FileName, false);
+                    writer = new StreamWriter(this.saveFileDialog1.FileName, false);
                     writer.Write(textBox1.Text);
                 }
                 catch (Exception)
